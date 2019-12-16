@@ -62,6 +62,20 @@ for j in range(1,len(tr_elements)):
         col[i][1].append(data.strip())
         #Increment i for the next column
         i += 1
+
+def addsuspension(col, Player, Pos, UpdateDate, EndDate):
+    temp = col
+    temp[0][1].append(Player)
+    temp[1][1].append(Pos)
+    temp[2][1].append(UpdateDate)
+    temp[3][1].append('Suspension')
+    temp[4][1].append('Expected to be out until at least '+ EndDate)
+    return temp
+
+col = addsuspension(col, 'Deandre Ayton', 'C', 'Oct 28', 'Dec 17')
+col = addsuspension(col, 'John Collins', 'PF', 'Nov 4', 'Dec 23')
+
+
 [len(C) for (title,C) in col]
 
 Dict = {title:column for (title,column) in col}
